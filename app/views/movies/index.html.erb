@@ -1,0 +1,31 @@
+<div class="center jumbotron">
+  <h1>MY MOVIES DATABASE</h1>
+  <%= image_tag("https://www.shareicon.net/data/256x256/2016/07/05/791306_cinema_512x512.png", :alt => "Welcome Image") %>
+  <p>🎥 Welcome to my movies database.</br>A fresh rails website about movies 🎬</p>
+</div>
+<h2 class="display-4">List of movies in my database</h2>
+<div class="jumbotron" style="background-color:#f2e3ae;">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Release year</th>
+      <th scope="col">Director</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <th scope="row"><%= movie.id %></th>
+        <td><%= movie.title %></td>
+        <td><%= movie.release_year %></td>
+        <td><%= movie.director.first_name %>
+          <%= movie.director.last_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
